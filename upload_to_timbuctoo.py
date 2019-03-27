@@ -22,7 +22,7 @@ headers = {
 # nl.knaw.huygens.timbuctoo.v5.dropwizard.endpoints.RdfUpload
 UPLOAD_DATA_FORM_PARAMETER = 'file'
 
-path = 'foafsample.ttl'
+path = 'bia_clusius.ttl'
 with open(path, 'rb') as f:
     file_tuple = (path, f, 'text/turtle')
 
