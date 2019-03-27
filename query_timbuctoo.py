@@ -5,6 +5,10 @@ import sys
 
 # See https://graphql.org/learn/serving-over-http/
 
+# ...and the timbuctoo specific guide is here
+
+# https://github.com/HuygensING/timbuctoo/blob/master/documentation/timbuctoo-graphql-api-guide.adoc
+
 GRAPHQL_QUERY = """
 query Home {                                
   promotedDataSets {
