@@ -1,8 +1,14 @@
 import requests
+import sys
+
+# You can verify that the upload was successful by going to the `timbuctoo_data`
+# subdirectory of the timbuctoo instance.
+
+dataset_name = sys.argv[1]
 
 endpoint_parameters = {
     'user_id': 'u33707283d426f900d4d33707283d426f900d4d0d',
-    'dataset_name': 'mydataset'
+    'dataset_name': dataset_name
 }
 
 endpoint_template = 'http://localhost:8080/v5/{user_id}/{dataset_name}/upload/rdf?forceCreation=true'
@@ -24,4 +30,4 @@ with open(path, 'rb') as f:
 
     payload = {'encoding': 'UTF-8'}
     response = requests.post(real_endpoint, headers=headers, data=payload, files=files)
-    print(dir(response))
+    print(response.status_code)
