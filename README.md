@@ -61,3 +61,37 @@ This error
 Index into it instead.  In timbuctoo the key insight is that every property has both `value` and `type` sub fields.
 
 HTTP/2 can confront graphql by removing multi request overhead
+
+
+
+
+"http://timbuctoo.huygens.knaw.nl/datasets/clusius/Persons_PE00002125"
+
+
+query retrieveData {
+  dataSets {
+    u33707283d426f900d4d33707283d426f900d4d0d__biaclusius {
+      clusius_Persons(uri: "http://timbuctoo.huygens.knaw.nl/datasets/clusius/Persons_PE00002125") {
+				tim_gender {
+          value
+        }
+      }
+    }
+  }
+}
+
+
+And also
+
+query retrieveData {
+  dataSets {
+    u33707283d426f900d4d33707283d426f900d4d0d__biaclusius {
+      clusius_PersonsList {
+				items {
+          uri
+        }
+      }
+    }
+  }
+}
+

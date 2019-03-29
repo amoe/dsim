@@ -41,33 +41,3 @@ json.dump(content, sys.stdout, indent=4)
 print()
 
 
-2http://timbuctoo.huygens.knaw.nl/datasets/clusius/Persons_PE00002125"
-
-
-query retrieveData {
-  dataSets {
-    u33707283d426f900d4d33707283d426f900d4d0d__biaclusius {
-      clusius_Persons(uri: "http://timbuctoo.huygens.knaw.nl/datasets/clusius/Persons_PE00002125") {
-				tim_gender {
-          value
-        }
-      }
-    }
-  }
-}
-
-
-And also
-
-query retrieveData {
-  dataSets {
-    u33707283d426f900d4d33707283d426f900d4d0d__biaclusius {
-      clusius_PersonsList {
-				items {
-          uri
-        }
-      }
-    }
-  }
-}
-
