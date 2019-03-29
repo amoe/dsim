@@ -45,3 +45,19 @@ Once you upload the properly formatted RDF you get stuff like this.
                 }
             }
 
+
+
+For the format of graphql queries try this.
+
+https://graphql.org/learn/serving-over-http/
+
+Graphql queries are constructed through graphql-java
+
+SubSel
+
+This error
+
+`SubSelectionRequired` means that you tried to return a non-scalar directly.
+Index into it instead.  In timbuctoo the key insight is that every property has both `value` and `type` sub fields.
+
+HTTP/2 can confront graphql by removing multi request overhead
