@@ -1,4 +1,5 @@
 import pytest
+import socket
 
 def check_is_open(host, port):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
