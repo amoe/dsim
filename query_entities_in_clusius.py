@@ -17,14 +17,14 @@ query retrieveData($personUri: String!) {
 """
 
 # This comes from the metadata query
-dataset_id = 'u33707283d426f900d4d33707283d426f900d4d0d__mydataset'
+dataset_id = 'u33707283d426f900d4d33707283d426f900d4d0d__biaclusius'
 
 qry_obj = {
     'query': GRAPHQL_QUERY, 
     'operationName': 'retrieveData',
     'variables': {
-        'personUri': "http://timbuctoo.huygens.knaw.nl/datasets/clusius/Persons_PE00002125"
-#        'dataSet': dataset_id
+        'personUri': "http://timbuctoo.huygens.knaw.nl/datasets/clusius/Persons_PE00002125",
+        'dataSet': dataset_id
     }
 }
 
