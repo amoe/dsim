@@ -28,19 +28,14 @@ qry_obj = {
     }
 }
 
-print(qry_obj)
-
-
-response = requests.post(
-    "http://localhost:8080/v5/graphql",
-    json=qry_obj,
-    headers={
-        'authorization': 'null',   # You have to send the literal string 'null'
-    }
-)
-
-content = response.json()
-json.dump(content, sys.stdout, indent=4)
-print()
-
+def do_query():
+    response = requests.post(
+        "http://localhost:8080/v5/graphql",
+        json=qry_obj,
+        headers={
+            'authorization': 'null',   # You have to send the literal string 'null'
+        }
+    )
+    content = response.json()
+    return content
 
