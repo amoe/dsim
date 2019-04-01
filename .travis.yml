@@ -3,6 +3,6 @@ services: docker
 python:
   - 3.5
 before_install:
-  - docker run -p8080:80 huygensing/timbuctoo:v6.16
+  - docker run -d -p8080:80 huygensing/timbuctoo:v6.16
 script:
   - python -m pytest test/test_connection.py
