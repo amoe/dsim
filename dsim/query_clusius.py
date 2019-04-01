@@ -3,17 +3,17 @@ import json
 import sys
 
 GRAPHQL_QUERY = """
-query retrieveData($personUri: String!) {
-  dataSets {
-    u33707283d426f900d4d33707283d426f900d4d0d__biaclusius {
-      clusius_Persons(uri: $personUri) {
-	tim_gender {
-          value
+    query retrieveData($personUri: String!) {
+      dataSets {
+        u33707283d426f900d4d33707283d426f900d4d0d__biaclusius {
+          clusius_Persons(uri: $personUri) {
+            tim_gender {
+              value
+            }
+          }
         }
       }
     }
-  }
-}
 """
 
 # This comes from the metadata query
