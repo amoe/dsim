@@ -3,11 +3,13 @@ import json
 import sys
 
 GRAPHQL_QUERY = """
-query retrieveData {
+query retrieveData($personUri: String!) {
   dataSets {
     u33707283d426f900d4d33707283d426f900d4d0d__biaclusius {
-      clusius_Persons(uri:"PE00011637") {
-        tim_birthDate
+      clusius_Persons(uri: $personUri) {
+	tim_gender {
+          value
+        }
       }
     }
   }
@@ -21,6 +23,7 @@ qry_obj = {
     'query': GRAPHQL_QUERY, 
     'operationName': 'retrieveData',
     'variables': {
+        'personUri': "http://timbuctoo.huygens.knaw.nl/datasets/clusius/Persons_PE00002125"
 #        'dataSet': dataset_id
     }
 }
