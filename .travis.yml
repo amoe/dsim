@@ -6,6 +6,6 @@ python:
   - 3.5
 before_install:
   - docker run -d -p8080:80 huygensing/timbuctoo:v6.16
-  - python scripts/wait_for_connection.py "$GRAPHIQL_URI" 8
+  - python -m dsim.connection "$GRAPHIQL_URI" 8
 script:
   - python -m pytest test/test_connection.py
