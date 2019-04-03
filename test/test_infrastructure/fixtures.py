@@ -1,9 +1,9 @@
 import pytest
 import dsim.upload
-
-FIXTURE_DATASET_NAME = 'foo'
+import test_infrastructure.constants
 
 @pytest.fixture
 def previously_uploaded_dataset():
-    response = dsim.upload.upload(FIXTURE_DATASET_NAME)
-    return FIXTURE_DATASET_NAME
+    dataset_name = test_infrastructure.constants.FIXTURE_DATASET_NAME
+    response = dsim.upload.upload(dataset_name)
+    return dataset_name
