@@ -6,6 +6,5 @@ def check_is_open(host, port):
     result = sock.connect_ex((host, port))
     return result == 0
 
-
 def test_connection():
     assert check_is_open('localhost', 8080)
