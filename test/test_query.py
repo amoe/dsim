@@ -1,6 +1,6 @@
 import pytest
 import pprint
-import dsim.query_clusius
+import dsim.query
 
 # def test_query_dataset(previously_uploaded_dataset):
 #     pprint.pprint(previously_uploaded_dataset)
@@ -22,7 +22,6 @@ EXPECTED_RESULT = {
 }
 
 # XXX: This won't work because it relies on existing state.
-@pytest.mark.skip
-def test_query():
-    result = dsim.query_clusius.do_query()
+def test_query(previously_uploaded_dataset):
+    result = dsim.query.do_query('foo')
     assert result == EXPECTED_RESULT

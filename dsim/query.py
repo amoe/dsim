@@ -16,22 +16,21 @@ GRAPHQL_QUERY = """
     }
 """
 
-# This comes from the metadata query
-dataset_id = 'u33707283d426f900d4d33707283d426f900d4d0d__biaclusius'
-
-qry_obj = {
-    'query': GRAPHQL_QUERY, 
-    'operationName': 'retrieveData',
-    'variables': {
-        'personUri': "http://timbuctoo.huygens.knaw.nl/datasets/clusius/Persons_PE00002125",
-        'dataSet': dataset_id
+def get_query(dataset_id):
+    qry_obj = {
+        'query': GRAPHQL_QUERY, 
+        'operationName': 'retrieveData',
+        'variables': {
+            'personUri': "http://timbuctoo.huygens.knaw.nl/datasets/clusius/Persons_PE00002125",
+            'dataSet': dataset_id
+        }
     }
-}
 
-def do_query():
+def do_query(dataset_id):
+    query = get_query(dataset_id)
     response = requests.post(
         "http://localhost:8080/v5/graphql",
-        json=qry_obj,
+        json=query,
         headers={
             'authorization': 'null',   # You have to send the literal string 'null'
         }
