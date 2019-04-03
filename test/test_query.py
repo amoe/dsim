@@ -21,6 +21,7 @@ EXPECTED_RESULT = {
     }
 }
 
+@pytest.mark.skip
 def test_query():
     result = dsim.query_clusius.do_query()
     assert result == EXPECTED_RESULT
