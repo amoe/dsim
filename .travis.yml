@@ -5,5 +5,4 @@ python:
 before_install:
   - docker run -d -p8080:80 huygensing/timbuctoo:v6.16
 script:
-  - sleep 60
   - python -m pytest test/test_connection.py

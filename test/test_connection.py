@@ -10,6 +10,6 @@ def check_is_open(host, port):
 def test_connection():
     assert check_is_open('localhost', 8080)
 
-def test_get_graphiql():
-    response = requests.get('http://localhost:8080/static/graphiql')
-    assert response.status_code == 200
+# def test_get_graphiql():
+#     response = requests.get('http://localhost:8080/static/graphiql')
+#     assert response.status_code == 200
