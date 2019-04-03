@@ -1,19 +1,6 @@
 import requests
 import sys
 
-# You can verify that the upload was successful by going to the `timbuctoo_data`
-# subdirectory of the timbuctoo instance.
-
-dataset_name = sys.argv[1]
-
-endpoint_parameters = {
-    'user_id': 'u33707283d426f900d4d33707283d426f900d4d0d',
-    'dataset_name': dataset_name
-}
-
-endpoint_template = 'http://localhost:8080/v5/{user_id}/{dataset_name}/upload/rdf?forceCreation=true'
-real_endpoint = endpoint_template.format_map(endpoint_parameters)
-
 headers = {
     'Authorization': 'fake',
 }
@@ -24,8 +11,17 @@ UPLOAD_DATA_FORM_PARAMETER = 'file'
 
 path = 'bia_clusius.ttl'
 
+# You can verify that the upload was successful by going to the `timbuctoo_data`
+# subdirectory of the timbuctoo instance.
 
-def upload():
+def upload(dataset_name):
+    endpoint_parameters = {
+        'user_id': 'u33707283d426f900d4d33707283d426f900d4d0d',
+        'dataset_name': dataset_name
+    }
+    endpoint_template = 'http://localhost:8080/v5/{user_id}/{dataset_name}/upload/rdf?forceCreation=true'
+    real_endpoint = endpoint_template.format_map(endpoint_parameters)
+
     with open(path, 'rb') as f:
         file_tuple = (path, f, 'text/turtle')
 
