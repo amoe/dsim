@@ -23,11 +23,14 @@ headers = {
 UPLOAD_DATA_FORM_PARAMETER = 'file'
 
 path = 'bia_clusius.ttl'
-with open(path, 'rb') as f:
-    file_tuple = (path, f, 'text/turtle')
 
-    files = {UPLOAD_DATA_FORM_PARAMETER: file_tuple}
 
-    payload = {'encoding': 'UTF-8'}
-    response = requests.post(real_endpoint, headers=headers, data=payload, files=files)
-    print(response.status_code)
+def upload():
+    with open(path, 'rb') as f:
+        file_tuple = (path, f, 'text/turtle')
+
+        files = {UPLOAD_DATA_FORM_PARAMETER: file_tuple}
+
+        payload = {'encoding': 'UTF-8'}
+        response = requests.post(real_endpoint, headers=headers, data=payload, files=files)
+        return response
